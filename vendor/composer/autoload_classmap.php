@@ -9,6 +9,7 @@ return array(
     'AddDescriptionToGroupsTable' => $baseDir . '/database/migrations/2017_07_20_103255_add_description_to_groups_table.php',
     'AddNewFieldsToUsersTable' => $baseDir . '/database/migrations/2017_07_21_061559_add_new_fields_to_users_table.php',
     'CreateBannersTable' => $baseDir . '/database/migrations/2017_07_21_103844_create_banners_table.php',
+    'CreateCategoriesTable' => $baseDir . '/database/migrations/2017_07_31_125725_create_categories_table.php',
     'CreateGroupsTable' => $baseDir . '/database/migrations/2017_07_20_102532_create_groups_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>E-Comm | Dashboard</title>
+  <title>E-Comm | @yield('title')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -20,13 +20,13 @@
   
   {!! Html::style('storage/admin/morris.js/morris.css') !!}
   
-  {!! Html::style('storage/admin/jvectormap/jquery-jvectormap.css') !!}
-  
   {!! Html::style('storage/admin/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') !!}
   
   {!! Html::style('storage/admin/bootstrap-daterangepicker/daterangepicker.css') !!}
   
   {!! Html::style('storage/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') !!}
+
+  {!! Html::style('storage/admin/datatables.net-bs/css/dataTables.bootstrap.min.css') !!}
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,11 +45,11 @@
   @yield('content')
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <div class="pull-right hidden-xs">
+    {{-- <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
     <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io/">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    reserved. --}}
   </footer>
 
 </div>
@@ -65,15 +65,13 @@
 <!-- Bootstrap 3.3.7 -->
 {!! Html::script('storage/admin/bootstrap/dist/js/bootstrap.min.js') !!}
 
+{!! Html::script('storage/admin/datatables.net-bs/js/jquery.dataTables.min.js') !!}
+
 {!! Html::script('storage/admin/raphael/raphael.min.js') !!}
 
 {!! Html::script('storage/admin/morris.js/morris.min.js') !!}
 
 {!! Html::script('storage/admin/jquery-sparkline/dist/jquery.sparkline.min.js') !!}
-
-{!! Html::script('storage/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') !!}
-
-{!! Html::script('storage/admin/jquery-jvectormap-world-mill-en.js') !!}
 
 {!! Html::script('storage/admin/jquery-knob/dist/jquery.knob.min.js') !!}
 
@@ -91,8 +89,9 @@
 
 {!! Html::script('storage/admin/dist/js/adminlte.min.js') !!}
 
-{!! Html::script('storage/admin/dist/js/pages/dashboard.js') !!}
+{{-- {!! Html::script('storage/admin/dist/js/pages/dashboard.js') !!} --}}
 {!! Html::script('storage/admin/dist/js/demo.js') !!}
+
 
 <script type="text/javascript">
   function readURL(input) {
@@ -109,6 +108,15 @@
     }
 }
 $(document).ready(function(){
+  $('#example1').DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      /*"ordering": true,*/
+      "info": true,
+      "autoWidth": false
+    });
+
   $("#profile_image").change(function(){
     readURL(this);
 });

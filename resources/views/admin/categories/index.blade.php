@@ -6,11 +6,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Banner
+        Categories
       </h1>
       <ol class="breadcrumb">
         <li><a href="/admin"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li><a href="/admin/banner">Banner</a></li>
+        <li><a href="/admin/categories">Category</a></li>
         
       </ol>
     </section>
@@ -27,26 +27,24 @@
           @endif
           <div class="box">
             
-            <div class="topbtn"><a href="/admin/banner/add"><button type="button" class="btn bg-purple btn-rightad pull-right">ADD</button></a></div>
+            <div class="topbtn"><a href="/admin/categories/create"><button type="button" class="btn bg-purple btn-rightad pull-right">ADD</button></a></div>
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Header</th>
-                  <th>Image</th>
+                  <th>Name</th>
                   <th>Status</th>
                   <th>Action</th>
                   
                 </tr>
                 </thead>
                 <tbody>
-                @if($banner_list)
-                  @foreach($banner_list as $value)
+                @if($categories)
+                  @foreach($categories as $value)
                     <tr>
-                      <td>{{$value->header}}</td>
-                      <td><img src="{{ url('uploads/banner/' .$value->image)}}" alt="{{$value->image}}" style="height:50px;width: 50px;"></td>
+                      <td>{{$value->name}}</td>
                       <td>{{ $value->status == '1'? 'Active':'In-Active' }}</td>
-                      <td><a href="/admin/banner/edit/{{$value->id}}" >Edit</a>&nbsp;|&nbsp;<a href="/admin/banner/delete/{{$value->id}}" onclick="return confirm('Are you sure?')">Delete</a></td>
+                      <td><a href="/admin/categories/{{$value->id}}/edit" >Edit</a>&nbsp;|&nbsp;<a href="/admin/categories/delete/{{$value->id}}" onclick="return confirm('Are you sure?')">Delete</a></td>
                     </tr>
                   @endforeach
                 @endif
