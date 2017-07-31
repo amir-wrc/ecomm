@@ -14,6 +14,7 @@
      
       <ul class="sidebar-menu" data-widget="tree">
       <li><a href="/admin/dashboard"><i class="fa fa-book"></i> <span>Dashboard</span></a></li>
+       <li><a href="/admin/banner"><i class="fa fa-book"></i> <span>Banner</span></a></li>
         {{--  <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
           <a href="#">

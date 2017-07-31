@@ -20,6 +20,7 @@ Route::group(['middleware' => ['admin']], function() {
    Route::get('/admin/dashboard','DashboardController@index');
    Route::get('/admin/logout','LoginController@logout');
    Route::get('/admin/profile','DashboardController@profile');
+   Route::get('/admin/banner','BannerController@index');
    Route::post('/admin/profile-submit','DashboardController@profile_submit');
    
    

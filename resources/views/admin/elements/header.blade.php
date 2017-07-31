@@ -222,28 +222,14 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="/storage/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="{!! Auth::guard('admin')->user()->profile_pic() !!}" class="img-circle" alt="User Image">
 
                 <p>
                   {{Auth::guard('admin')->user()->name}} - Administrator
                   
                 </p>
               </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
+              
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
