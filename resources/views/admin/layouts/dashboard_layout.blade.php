@@ -28,6 +28,8 @@
 
   {!! Html::style('storage/admin/datatables.net-bs/css/dataTables.bootstrap.min.css') !!}
 
+  {!! Html::style('storage/admin/select2/dist/css/select2.min.css') !!}
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -66,6 +68,8 @@
 {!! Html::script('storage/admin/bootstrap/dist/js/bootstrap.min.js') !!}
 
 {!! Html::script('storage/admin/datatables.net-bs/js/jquery.dataTables.min.js') !!}
+
+{!!Html::script("storage/admin/select2/dist/js/select2.full.min.js")!!}
 
 {!! Html::script('storage/admin/raphael/raphael.min.js') !!}
 
@@ -108,6 +112,7 @@
     }
 }
 $(document).ready(function(){
+  $(".js-example-basic-multiple").select2();
   $('#example1').DataTable({
       "paging": true,
       "lengthChange": true,

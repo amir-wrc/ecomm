@@ -43,5 +43,47 @@ Route::group(['middleware' => ['admin']], function() {
    Route::post('/admin/categories/update/{id}', ['uses' => 'CategoryController@update']);
 
    /****************End*************************/
+
+   /*****************Sub-Category*******************/
+
+   Route::resource('/admin/sub-categories','SubCategoryController');
+   Route::get('/admin/sub-categories/delete/{id}', ['uses' => 'SubCategoryController@destroy']);
+   Route::post('/admin/sub-categories/update/{id}', ['uses' => 'SubCategoryController@update']);
+
+   /*******************End*************************/
+
+   /*****************Brand*********************************/
+
+   Route::resource('/admin/brands','BrandController');
+   Route::get('/admin/brands/delete/{id}', ['uses' => 'BrandController@destroy']);
+   Route::post('/admin/brands/update/{id}', ['uses' => 'BrandController@update']);
+
+   /*****************End***********************************/
+
+   /**********************Tag******************************/
+
+   Route::resource('/admin/tags','TagController');
+   Route::get('/admin/tags/delete/{id}', ['uses' => 'TagController@destroy']);
+   Route::post('/admin/tags/update/{id}', ['uses' => 'TagController@update']);
+
+   /**********************End******************************/
+
+
+   /**********************Unit******************************/
+
+   Route::resource('/admin/units','UnitController');
+   Route::get('/admin/units/delete/{id}', ['uses' => 'UnitController@destroy']);
+   Route::post('/admin/units/update/{id}', ['uses' => 'UnitController@update']);
+
+   /**********************End******************************/
+
+
+   /**********************Product******************************/
+
+   Route::resource('/admin/products','ProductController');
+   Route::get('/admin/products/delete/{id}', ['uses' => 'ProductController@destroy']);
+   Route::post('/admin/products/update/{id}', ['uses' => 'ProductController@update']);
+
+   /**********************End******************************/
    
 });

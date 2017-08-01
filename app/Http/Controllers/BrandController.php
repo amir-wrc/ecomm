@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Category;
+use App\Brand;
 use Validator;
 use Image;
 
-class CategoryController extends Controller
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('admin.categories.index')->with('categories',$categories);
+        $brands = Brand::all();
+        return view('admin.brand.index')->with('brands',$brands);
     }
 
     /**
@@ -28,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.add');
+        return view('admin.brand.add');
     }
 
     /**
@@ -40,9 +39,9 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         Validator::make($request->all(),[
-            'name' => 'required|unique:categories,name',
-            'status' => 'required',
-            'image' => 'required_with|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'name' => 'required|unique:brands,name',
+            'link' => 'required|regex:/^(http?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ])->validate();
 
         if($request->hasFile('image')) {
@@ -52,28 +51,28 @@ class CategoryController extends Controller
 
             //thumb destination path
             
-            $destinationPath_2 = public_path().'/uploads/category' ;
+            $destinationPath_2 = public_path().'/uploads/brand' ;
 
             $img = Image::make($file->getRealPath());
 
             
-            $img->resize(300, 300, function ($constraint){
+            $img->resize(200, 200, function ($constraint){
                 $constraint->aspectRatio();
             })->save($destinationPath_2.'/'.$fileName);
         }
         else {
             $fileName = '';
         }
-        $categories = new Category();
-        $categories->name = $request->name;
-        $categories->image = $fileName;
-        $categories->status = $request->status;
 
-        $categories->save();
+        $brands = new Brand();
+        $brands->name = $request->name;
+        $brands->image = $fileName;
+        $brands->link = $request->link;
 
-        $request->session()->flash("message", "Category added successfully");
-        return redirect("/admin/categories");
+        $brands->save();
 
+        $request->session()->flash("message", "Brand added successfully");
+        return redirect("/admin/brands");
     }
 
     /**
@@ -95,14 +94,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::find($id);
-        if($categories) {
-            return view('admin.categories.edit')->with('categories',$categories);
-        }
-        else {
-            $request->session()->flash("error_message", "No category found");
-            return redirect("/admin/categories");
-        }
+        $brand = Brand::find($id);
+        return view('admin.brand.edit')->with('brand',$brand);
     }
 
     /**
@@ -115,12 +108,12 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         Validator::make($request->all(),[
-            'name' => 'required',
-            'status' => 'required',
+            'name' => 'required|unique:brands,name,'.$id,
+            'link' => 'required|regex:/^(http?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
             'image' => 'required_with|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ])->validate();
 
-        $categories = Category::find($id);
+        $brands = Brand::find($id);
 
         if($request->hasFile('image')) {
             $file = $request->file('image') ;
@@ -129,28 +122,27 @@ class CategoryController extends Controller
 
             //thumb destination path
             
-            $destinationPath_2 = public_path().'/uploads/category' ;
+            $destinationPath_2 = public_path().'/uploads/brand' ;
 
             $img = Image::make($file->getRealPath());
 
             
-            $img->resize(300, 300, function ($constraint){
+            $img->resize(200, 200, function ($constraint){
                 $constraint->aspectRatio();
             })->save($destinationPath_2.'/'.$fileName);
         }
         else {
-            $fileName = $categories->image;
+            $fileName = $brands->image;
         }
-        
-        
-        $categories->name = $request->name;
-        $categories->image = $fileName;
-        $categories->status = $request->status;
 
-        $categories->save();
+        $brands->name = $request->name;
+        $brands->image = $fileName;
+        $brands->link = $request->link;
 
-        $request->session()->flash("message", "Category updated successfully");
-        return redirect("/admin/categories");
+        $brands->save();
+
+        $request->session()->flash("message", "Brand updated successfully");
+        return redirect("/admin/brands");
     }
 
     /**
@@ -159,17 +151,16 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, Request $request)
+    public function destroy(Request $request, $id)
     {
-        $categories = Category::find($id);
-        if($categories) {
-            $categories->delete();
-            $request->session()->flash("message", "Category deleted successfully");
-            return redirect("/admin/categories");
+        $brands = Brand::find($id);
+        if($brands->delete()) {
+            $request->session()->flash("message", "Brand deleted successfully");
+            return redirect("/admin/brands");
         }
         else {
-            $request->session()->flash("error_message", "Please try again");
-            return redirect("/admin/categories");
+            $request->session()->flash("error_message", "Try again");
+            return redirect("/admin/brands");
         }
     }
 }

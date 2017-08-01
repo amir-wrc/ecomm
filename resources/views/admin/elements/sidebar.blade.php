@@ -16,6 +16,11 @@
       <li><a href="/admin/dashboard"><i class="fa fa-book"></i> <span>Dashboard</span></a></li>
       <li><a href="/admin/banner"><i class="fa fa-book"></i> <span>Banner</span></a></li>
       <li><a href="/admin/categories"><i class="fa fa-book"></i> <span>Category</span></a></li>
+      <li><a href="/admin/sub-categories"><i class="fa fa-book"></i> <span>Sub-Category</span></a></li>
+      <li><a href="/admin/brands"><i class="fa fa-book"></i> <span>Brand</span></a></li>
+      <li><a href="/admin/tags"><i class="fa fa-book"></i> <span>Tag</span></a></li>
+      <li><a href="/admin/units"><i class="fa fa-book"></i> <span>Unit</span></a></li>
+      <li><a href="/admin/products"><i class="fa fa-book"></i> <span>Product</span></a></li>
         {{--  <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
           <a href="#">
