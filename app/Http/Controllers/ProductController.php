@@ -7,6 +7,9 @@ use App\Unit;
 use App\Brand;
 use Validator;
 use Image;
+use App\Logic\Image\ImageRepository;
+use Illuminate\Support\Facades\Input;
+use File;
 
 class ProductController extends Controller
 {
@@ -15,6 +18,12 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected $image;
+    public function __construct(ImageRepository $imageRepository)
+    {
+        $this->image = $imageRepository;
+    }
+
     public function index()
     {
         $products = \App\Product::all();
@@ -252,5 +261,48 @@ class ProductController extends Controller
             $request->session()->flash("error_message", "Please try again");
             return redirect("/admin/products");
         }
+    }
+
+    public function gallery(Request $request, $id) {
+        return view('admin.products.gallery')->with('id',$id);
+    }
+
+    public function get_gallery($id) {
+
+        $images = \App\ProductGallery::where('product_id',$id)->get(['image']);
+
+        $imageAnswer = [];
+
+        foreach ($images as $image) {
+            $imageAnswer[] = [
+                'server' => $image->image,
+                'size' => File::size(public_path('uploads/product/gallery/' . $image->image))
+            ];
+        }
+
+        return response()->json([
+            'images' => $imageAnswer
+        ]);
+    }
+
+
+    public function store_gallery(Request $request) {
+        $photo = Input::all();
+        $response = $this->image->upload($photo,$request->product_id);
+        return $response;
+    }
+
+
+    public function remove_gallery_image($file_name,$product_id) {
+        $filename = $file_name;
+        $product_id = $product_id;
+
+        if(!$filename)
+        {
+            return 0;
+        }
+        $response = $this->image->delete( $filename,$product_id );
+        return $response;
+        
     }
 }

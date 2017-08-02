@@ -96,6 +96,12 @@
 {{-- {!! Html::script('storage/admin/dist/js/pages/dashboard.js') !!} --}}
 {!! Html::script('storage/admin/dist/js/demo.js') !!}
 
+@if(Request::segment(2) === 'products' && Request::segment(3) === 'gallery')
+  {!! Html::style('storage/admin/packages/dropzone/dropzone.css') !!}
+  {!!Html::script("storage/admin/packages/dropzone/dropzone.js")!!}
+  {!!Html::script("storage/admin/packages/dropzone/dropzone-config.js")!!}
+@endif
+
 
 <script type="text/javascript">
   function readURL(input) {

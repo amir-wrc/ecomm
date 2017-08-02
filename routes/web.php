@@ -83,7 +83,18 @@ Route::group(['middleware' => ['admin']], function() {
    Route::resource('/admin/products','ProductController');
    Route::get('/admin/products/delete/{id}', ['uses' => 'ProductController@destroy']);
    Route::post('/admin/products/update/{id}', ['uses' => 'ProductController@update']);
+   Route::get('/admin/products/gallery/{id}', ['uses' => 'ProductController@gallery']);
+   Route::get('/admin/products/get-gallery/{id}',['uses' => 'ProductController@get_gallery']);
+   Route::get('/admin/products/remove-gallery-image/{file_name}/{product_id}','ProductController@remove_gallery_image');
+   Route::post('/admin/products/store-gallery', ['uses' => 'ProductController@store_gallery']);
 
    /**********************End******************************/
+
+
+   /**************************Vendor*************************/
+
+   
+   
+   /**************************End****************************/
    
 });

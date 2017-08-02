@@ -52,7 +52,7 @@
                       <td>{{ $value->brands->name }}</td>
                       <td>{{ $value->units->name }}</td>
                       <td><img src="{{ url('uploads/product/' .$value->image)}}" alt="{{$value->image}}" style="height:75px;width: 75px;"></td>
-                      <td><a href="/admin/products/{{$value->id}}/edit" >Edit</a>&nbsp;|&nbsp;<a href="/admin/products/delete/{{$value->id}}" onclick="return confirm('Are you sure?')">Delete</a></td>
+                      <td><a href="/admin/products/{{$value->id}}/edit" >Edit</a>&nbsp;|&nbsp;<a href="/admin/products/delete/{{$value->id}}" onclick="return confirm('Are you sure?')">Delete</a>|&nbsp;<a href="/admin/products/gallery/{{ $value->id }}">Gallery</td>
                     </tr>
                   @endforeach
                 @endif
