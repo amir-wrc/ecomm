@@ -102,6 +102,45 @@
   {!!Html::script("storage/admin/packages/dropzone/dropzone-config.js")!!}
 @endif
 
+@if(Request::segment(2) === 'vendors')
+  {!! Html::script('storage/admin/plugins/input-mask/jquery.inputmask.js') !!}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#fax").inputmask("(999) 999-9999");
+      $("#toll_free").inputmask("9999-999-9999");
+    });
+  </script>
+@endif
+
+@if(Request::segment(2) === 'vendors' && Request::segment(3) === 'create')
+  <script type="text/javascript">
+    function load_state_list() {
+      $.ajax({
+        type: "POST",
+        url: "/admin/vendors/get-states/",
+        data: {country_id:$("#country_id").val(),"_token": "{{ csrf_token() }}"},
+        async: false,
+        success:function(response) {
+          var $state_id = $("#state_id");
+          $state_id.find('option').not(':first').remove();
+          $.each(response.state_list, function(key, value) {
+            $state_id.append(
+              $("<option />").val(key).text(value)
+            );
+          });
+        }
+      });
+    }
+    $(document).ready(function(){
+      load_state_list();
+
+      $("#country_id").change(function(){
+        load_state_list();
+      });
+    });
+  </script>
+@endif
+
 
 <script type="text/javascript">
   function readURL(input) {

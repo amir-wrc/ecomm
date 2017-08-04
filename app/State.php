@@ -10,5 +10,5 @@ class State extends Model
     	'name','country_id'
     ];
 
-    protected $timestamps = false;
+    public $timestamps = false;
 }

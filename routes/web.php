@@ -93,7 +93,10 @@ Route::group(['middleware' => ['admin']], function() {
 
    /**************************Vendor*************************/
 
-   
+   Route::resource('/admin/vendors','VendorController');
+   Route::post('/admin/vendors/get-states/', 'VendorController@get_states');
+   Route::post('/admin/vendors/update/{id}', ['uses' => 'VendorController@update']);
+   Route::get('/admin/vendors/delete/{id}', ['uses' => 'VendorController@destroy']);
    
    /**************************End****************************/
    
