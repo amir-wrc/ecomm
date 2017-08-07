@@ -22,6 +22,7 @@
       <li><a href="/admin/units"><i class="fa fa-book"></i> <span>Unit</span></a></li>
       <li><a href="/admin/products"><i class="fa fa-book"></i> <span>Product</span></a></li>
       <li><a href="/admin/vendors"><i class="fa fa-book"></i> <span>Vendor</span></a></li>
+      <li><a href="/admin/regions"><i class="fa fa-book"></i> <span>Region</span></a></li>
         {{--  <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
           <a href="#">

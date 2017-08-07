@@ -99,5 +99,16 @@ Route::group(['middleware' => ['admin']], function() {
    Route::get('/admin/vendors/delete/{id}', ['uses' => 'VendorController@destroy']);
    
    /**************************End****************************/
+
+   /**************************Region*************************/
+
+     Route::get('/admin/regions','RegionController@index');
+     Route::post('/admin/regions/get-states/', 'VendorController@get_states');
+     Route::get('/admin/regions/add','RegionController@add');
+     Route::post('/admin/regions/store','RegionController@store');
+     Route::get('/admin/regions/edit/{id}','RegionController@edit');
+     Route::post('/admin/regions/update','RegionController@update');
+     Route::get('/admin/regions/delete/{id}','RegionController@delete');
    
+   /**************************End*************************/
 });

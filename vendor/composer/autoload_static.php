@@ -316,6 +316,7 @@ class ComposerStaticInit3eb799210d39c5e4a27b5270222294a8
         'CreateProductStocksTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_01_115242_create_product_stocks_table.php',
         'CreateProductTagsTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_01_114809_create_product_tags_table.php',
         'CreateProductsTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_01_105500_create_products_table.php',
+        'CreateRegionsTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_07_100825_create_regions_table.php',
         'CreateStatesTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_03_110402_create_states_table.php',
         'CreateSubCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_01_055224_create_sub_categories_table.php',
         'CreateTagsTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_01_110635_create_tags_table.php',

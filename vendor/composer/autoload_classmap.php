@@ -21,6 +21,7 @@ return array(
     'CreateProductStocksTable' => $baseDir . '/database/migrations/2017_08_01_115242_create_product_stocks_table.php',
     'CreateProductTagsTable' => $baseDir . '/database/migrations/2017_08_01_114809_create_product_tags_table.php',
     'CreateProductsTable' => $baseDir . '/database/migrations/2017_08_01_105500_create_products_table.php',
+    'CreateRegionsTable' => $baseDir . '/database/migrations/2017_08_07_100825_create_regions_table.php',
     'CreateStatesTable' => $baseDir . '/database/migrations/2017_08_03_110402_create_states_table.php',
     'CreateSubCategoriesTable' => $baseDir . '/database/migrations/2017_08_01_055224_create_sub_categories_table.php',
     'CreateTagsTable' => $baseDir . '/database/migrations/2017_08_01_110635_create_tags_table.php',
