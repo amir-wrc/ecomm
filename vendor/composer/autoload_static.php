@@ -313,7 +313,7 @@ class ComposerStaticInit3eb799210d39c5e4a27b5270222294a8
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateProductCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_01_114609_create_product_categories_table.php',
         'CreateProductGalleriesTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_01_110714_create_product_galleries_table.php',
-        'CreateProductStocksTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_01_115242_create_product_stocks_table.php',
+        'CreateProductStocksTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_08_091612_create_product_stocks_table.php',
         'CreateProductTagsTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_01_114809_create_product_tags_table.php',
         'CreateProductsTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_01_105500_create_products_table.php',
         'CreateRegionsTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_07_100825_create_regions_table.php',

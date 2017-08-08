@@ -111,4 +111,14 @@ Route::group(['middleware' => ['admin']], function() {
      Route::get('/admin/regions/delete/{id}','RegionController@delete');
    
    /**************************End*************************/
+
+   /**************************Orders***********************/
+     Route::get('/admin/orders','OrderController@index');
+     Route::get('/admin/orders/add','OrderController@add');
+     Route::post('/admin/orders/store','OrderController@store');
+     Route::get('/admin/orders/edit/{id}','OrderController@edit');
+     Route::post('/admin/orders/update','OrderController@update');
+     Route::get('/admin/orders/delete/{id}','OrderController@delete');
+
+   /*************************end****************************/
 });

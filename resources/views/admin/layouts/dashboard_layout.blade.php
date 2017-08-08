@@ -147,7 +147,7 @@
     function load_state_list() {
       $.ajax({
         type: "POST",
-        url: "/admin/vendors/get-states/",
+        url: "/admin/regions/get-states/",
         data: {country_id:$("#country_id").val(),"_token": "{{ csrf_token() }}"},
         async: false,
         success:function(response) {
@@ -171,7 +171,18 @@
   </script>
 @endif
 
+@if(Request::segment(2) === 'orders')
+   
+   {!!Html::script("storage/admin/js/input-mask/jquery.inputmask.js")!!}
+  {!!Html::script("storage/admin/js/input-mask/jquery.inputmask.date.extensions.js")!!}
+  {!!Html::script("storage/admin/js/input-mask/jquery.inputmask.extensions.js")!!}
 
+  <script type="text/javascript">
+  $(function () {
+    $("[data-mask]").inputmask();
+  });
+  </script>
+@endif
 
 <script type="text/javascript">
   function readURL(input) {
@@ -204,6 +215,8 @@ $(document).ready(function(){
 });
 
 </script>
+
+
 </body>
 
 

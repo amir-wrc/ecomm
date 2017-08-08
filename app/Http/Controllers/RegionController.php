@@ -13,7 +13,7 @@ class RegionController extends Controller
     public function index()
     {
       $regions = Region::all();
-      
+    
       return view('admin.regions.index')->with('regions',$regions);
     }
 
@@ -30,7 +30,7 @@ class RegionController extends Controller
             'head'=> 'required',
             'address' => 'required',
             'country_id' => 'required',
-            //'state_id' => 'required',
+            'state_id' => 'required',
             'city' => 'required',
             'pincode' => 'required|max:6|min:6',
             'phone' => 'required|max:11|min:7',
@@ -75,7 +75,7 @@ class RegionController extends Controller
             'head'=> 'required',
             'address' => 'required',
             'country_id' => 'required',
-            //'state_id' => 'required',
+            'state_id' => 'required',
             'city' => 'required',
             'pincode' => 'required|max:6|min:6',
             'phone' => 'required|max:11|min:7',
