@@ -121,4 +121,15 @@ Route::group(['middleware' => ['admin']], function() {
      Route::get('/admin/orders/delete/{id}','OrderController@delete');
 
    /*************************end****************************/
+
+    /**************************Warehouse***********************/
+
+    Route::get('/admin/warehouse','WarehouseController@index');
+    Route::get('/admin/warehouse/add','WarehouseController@add');
+    Route::post('/admin/warehouse/store','WarehouseController@store');
+    Route::get('/admin/warehouse/edit/{id}','WarehouseController@edit');
+    Route::post('/admin/warehouse/update','WarehouseController@update');
+    Route::get('/admin/warehouse/delete/{id}','WarehouseController@delete');
+
+     /*************************end****************************/
 });

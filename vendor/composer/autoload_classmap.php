@@ -28,6 +28,7 @@ return array(
     'CreateUnitsTable' => $baseDir . '/database/migrations/2017_08_01_110648_create_units_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'CreateVendorsTable' => $baseDir . '/database/migrations/2017_08_03_112105_create_vendors_table.php',
+    'CreateWarehousesTable' => $baseDir . '/database/migrations/2017_08_09_105422_create_warehouses_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
