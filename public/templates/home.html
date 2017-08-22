@@ -79,9 +79,9 @@
 
                      <div class="row">
                           
-                        <div class="owl-carousel new-arrivals-carousel">
+                        <div class="owl-carousel new-arrivals-carousel" >
                           
-                            <slide ng-repeat="prdt in products track by $index" active="prdt.active">
+                            <div ng-repeat="prdt in products track by $index" active="prdt.active" ng-class="{'active': $index == 0}">
                            <div class="product product2">
                               <div class="product-top">
                                  <figure class="product-image-container"><a href="product.html" title="White linen sheer dress"><img src="uploads/product/{{prdt.image}}" alt="Product image" class="product-image"> <img src="uploads/product/{{prdt.image}}" alt="Product image hover" class="product-image-hover"></a></figure>
@@ -157,7 +157,7 @@
                               </div>
                            </div>-->
 
-                        </slide>
+                        </div>
 
                      </div>
 
