@@ -1,4 +1,3 @@
-
 @extends('admin.layouts.dashboard_layout')
 @section('content')
              <!-- Content Wrapper. Contains page content -->
@@ -35,8 +34,6 @@
                   <th>Name</th>
                   <th>Brand</th>
                   <th>Quantity</th>
-                 
-                  
                   <th>Action</th>
                 </tr>
                 </thead>

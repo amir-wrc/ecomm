@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\ProductStock;
+use App\Category;
 use Validator;
 class OrderController extends Controller
 {
@@ -19,7 +20,9 @@ class OrderController extends Controller
     public function add()
     {
     	$Product=product::all();
-    	
+    	 /*echo "<pre>";
+       print_r($Product);
+       echo "</pre>";die();*/
     	return view('admin/orders/add')->with('product',$Product);
     }
     public function store(Request $request)
@@ -60,9 +63,7 @@ class OrderController extends Controller
     {
     	$Product=product::all();
     	$orderplaced=ProductStock::find($id);
-    	/*echo "<pre>";
-    	print_r($orderplaced);
-    	echo "</pre>";die();*/
+  
     	return view('admin/orders/edit')->with(['orderplaced'=>$orderplaced,'product'=>$Product]);
     }
     public function update(Request $request)
@@ -122,7 +123,7 @@ class OrderController extends Controller
 
     	if($delete->delete())
     	{
-    		$request->session()->flash("message", "Order Deleted successfully");
+    		  $request->session()->flash("message", "Order Deleted successfully");
           return redirect("/admin/orders");
     	}
     }

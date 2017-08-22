@@ -19,7 +19,9 @@ class RegionController extends Controller
 
     public function add()
     {
-    	$countries = \App\Country::orderBy('name','asc')->get()->pluck('name','id')->toArray();
+    	
+        $countries = \App\Country::orderBy('name','asc')->get()->pluck('name','id')->toArray();
+
     	return view('admin.regions.add')->with('countries',$countries);
     }
 
@@ -34,7 +36,7 @@ class RegionController extends Controller
             'city' => 'required',
             'pincode' => 'required|max:6|min:6',
             'phone' => 'required|max:11|min:7',
-            'email' => 'required',
+            'email' => 'required|email',
             
         ])->validate();
 
@@ -55,7 +57,7 @@ class RegionController extends Controller
     	 if($regions->save())
     	 {
     	 	$request->session()->flash("message", "Region added successfully");
-        return redirect("/admin/regions");
+            return redirect("/admin/regions");
     	 }
     }
     public function edit($id)
@@ -102,7 +104,7 @@ class RegionController extends Controller
     	 if($regions->save())
     	 {
     	 	$request->session()->flash("message", "Region Updated successfully");
-        return redirect("/admin/regions");
+            return redirect("/admin/regions");
     	 }
 
     }

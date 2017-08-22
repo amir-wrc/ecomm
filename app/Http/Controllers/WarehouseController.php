@@ -26,7 +26,7 @@ class WarehouseController extends Controller
      	Validator::make($request->all(),[
             'name' => 'required',
             'address'=> 'required',
-            'phone' => 'required|min:7,max:11|numeric', 
+            'phone' => 'required|max:10|min:10|regex:/[0-9]{10}/', 
             'email'=>'required|email'
          ])->validate();
 
@@ -58,7 +58,7 @@ class WarehouseController extends Controller
          Validator::make($request->all(),[
             'name' => 'required',
             'address'=> 'required',
-            'phone' => 'required|min:7,max:11|numeric', 
+            'phone' => 'required|max:10|min:10|regex:/[0-9]{10}/', 
             'email'=>'required|email'
          ])->validate();
 
