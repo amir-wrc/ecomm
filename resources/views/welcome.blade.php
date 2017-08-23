@@ -20,18 +20,30 @@
          {!! Html::style('storage/frontend/css/style.css') !!}
          
          {!! Html::style('storage/frontend/css/responsive.css') !!}
-
          
+         <!--carousel css-->
+         {!! Html::script('storage/frontend/css/jk-carousel.min.css') !!}
+         <!-- end-->
          
          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.min.js"></script>
+
          {!! Html::script('storage/frontend/angular/AuthCtrl.js') !!}
          {!! Html::script('storage/frontend/angular/appRoutes.js') !!}
          
          {!! Html::script('storage/frontend/angular/app.js') !!}
          
-
+         <!--carousel cdn-->
+             
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js" />
+    <script type="text/javascript" data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.15/angular.js" data-semver="1.3.15"></script>
+    <script type="text/javascript" data-require="jquery@2.1.3" data-semver="2.1.3" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+         <!--end-->
       </head>
       <body ng-app="ecommApp">
          <div id="wrapper"  ng-controller="AuthController">
@@ -116,7 +128,9 @@
          {!! Html::script('storage/frontend/js/maplabel.js') !!}
          {!! Html::script('storage/frontend/js/main.js') !!}
         
-
+          <!--carousel js-->
+           {!! Html::script('storage/frontend/js/jk-carousel.min.js') !!}
+          <!-- end -->
          <script type="text/javascript">
           $(function() {
           "use strict";
