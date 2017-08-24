@@ -99,5 +99,37 @@ Route::group(['middleware' => ['admin']], function() {
    Route::get('/admin/vendors/delete/{id}', ['uses' => 'VendorController@destroy']);
    
    /**************************End****************************/
+
+   /**************************Region*************************/
+
+     Route::get('/admin/regions','RegionController@index');
+     Route::post('/admin/regions/get-states/', 'VendorController@get_states');
+     Route::get('/admin/regions/add','RegionController@add');
+     Route::post('/admin/regions/store','RegionController@store');
+     Route::get('/admin/regions/edit/{id}','RegionController@edit');
+     Route::post('/admin/regions/update','RegionController@update');
+     Route::get('/admin/regions/delete/{id}','RegionController@delete');
    
+   /**************************End*************************/
+
+   /**************************Orders***********************/
+     Route::get('/admin/orders','OrderController@index');
+     Route::get('/admin/orders/add','OrderController@add');
+     Route::post('/admin/orders/store','OrderController@store');
+     Route::get('/admin/orders/edit/{id}','OrderController@edit');
+     Route::post('/admin/orders/update','OrderController@update');
+     Route::get('/admin/orders/delete/{id}','OrderController@delete');
+
+   /*************************end****************************/
+
+    /**************************Warehouse***********************/
+
+    Route::get('/admin/warehouse','WarehouseController@index');
+    Route::get('/admin/warehouse/add','WarehouseController@add');
+    Route::post('/admin/warehouse/store','WarehouseController@store');
+    Route::get('/admin/warehouse/edit/{id}','WarehouseController@edit');
+    Route::post('/admin/warehouse/update','WarehouseController@update');
+    Route::get('/admin/warehouse/delete/{id}','WarehouseController@delete');
+
+     /*************************end****************************/
 });
