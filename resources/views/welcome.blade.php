@@ -20,6 +20,8 @@
          {!! Html::style('storage/frontend/css/style.css') !!}
          
          {!! Html::style('storage/frontend/css/responsive.css') !!}
+
+         {!! Html::style('storage/frontend/css/revslider-section.css') !!}
          
         
          
@@ -109,6 +111,7 @@
          </div>
          <a href="#header" id="scroll-top" title="Go to top">Top</a>
          {!! Html::script('storage/frontend/js/jquery.min.js') !!}
+         
          <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
          {!! Html::script('storage/frontend/js/bootstrap.min.js') !!}
          {!! Html::script('storage/frontend/js/smoothscroll.js') !!}

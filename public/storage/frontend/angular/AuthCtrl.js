@@ -8,6 +8,7 @@ AuthCtrl.controller('AuthController',function($scope,$http){
         //console.log(response.data);
         $scope.banners = response.data.banners;
         $scope.products = response.data.products;
+        $scope.brands = response.data.brands;
          
       });
     	

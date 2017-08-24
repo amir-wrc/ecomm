@@ -79,8 +79,9 @@
 
                      <div class="row">
                           
-                         
+                          
                         <div class="owl-carousel new-arrivals-carousel">
+
                            <!--<data-owl-carousel class="owl-carousel">-->
                                
                             <div ng-repeat="prdt in products track by $index" active="prdt.active" ng-class="{'active': $index == 0}">
@@ -306,7 +307,9 @@
                   <div class="carousel-container">
                      <h2 class="carousel-title">From The blog</h2>
                      <div class="row">
+
                         <div class="owl-carousel blog-posts-carousel">
+                           
                            <article class="article">
                               <div class="article-media-container"><a href="single.html"><img src="storage/frontend/images/blog/post1.jpg" class="img-responsive" alt="Post 1"></a></div>
                               <div class="article-meta-box"><span class="article-icon article-date-icon"></span> <span class="meta-box-text">05 Nov</span></div>
@@ -346,22 +349,29 @@
                      <h2 class="carousel-title">Our Brands</h2>
                      <div class="row">
                             
-                        <div class="owl-carousel brands-carousel">
-                              
+                        
+                          <div class="owl-carousel brands-carousel">
+                            
+                          <div ng-repeat="bd in brands track by $index" active="bd.active" ng-class="{'active': $index == 0}">
+                           <div class="brand"><a href="#"><img src="uploads/brand/{{bd.image}}" alt="Brand name"></a></div>
+                           <!--<div class="brand"><a href="#"><img src="storage/frontend/images/brands/brand.jpg" alt="Brand name"></a></div>
                            <div class="brand"><a href="#"><img src="storage/frontend/images/brands/brand.jpg" alt="Brand name"></a></div>
                            <div class="brand"><a href="#"><img src="storage/frontend/images/brands/brand.jpg" alt="Brand name"></a></div>
                            <div class="brand"><a href="#"><img src="storage/frontend/images/brands/brand.jpg" alt="Brand name"></a></div>
                            <div class="brand"><a href="#"><img src="storage/frontend/images/brands/brand.jpg" alt="Brand name"></a></div>
                            <div class="brand"><a href="#"><img src="storage/frontend/images/brands/brand.jpg" alt="Brand name"></a></div>
-                           <div class="brand"><a href="#"><img src="storage/frontend/images/brands/brand.jpg" alt="Brand name"></a></div>
-                           <div class="brand"><a href="#"><img src="storage/frontend/images/brands/brand.jpg" alt="Brand name"></a></div>
-                           <div class="brand"><a href="#"><img src="storage/frontend/images/brands/brand.jpg" alt="Brand name"></a></div>
-                        </div>
+                           <div class="brand"><a href="#"><img src="storage/frontend/images/brands/brand.jpg" alt="Brand name"></a></div>-->
+
+                           </div> 
+                          
+                        </div><!-- caruosel end-->
+                          
                      </div>
                   </div>
                </div>
                <div class="md-margin2x half hidden-xs"></div>
                <div class="lg-margin visible-xs"></div>
             </section>
-
+           
          </div>
+          
